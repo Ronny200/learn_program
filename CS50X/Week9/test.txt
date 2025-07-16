@@ -1,0 +1,28 @@
+{'name': 'Apple Inc. Common Stock', 'price': 221.76, 'symbol': 'AAPL'}
+
+CREATE TABLE shares (
+    shares_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    user_id INTEGER NOT NULL, -- 外键，关联到 users 表的 id 字段
+    symbol TEXT NOT NULL, -- 股票代码
+    shares INTEGER NOT NULL, -- 股票数量
+    price NUMERIC NOT NULL, -- 单股价格
+    total NUMERIC NOT NULL, -- 总价 (单价 * 数量)
+    -- transacted TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 交易时间，默认为当前时间
+    FOREIGN KEY (user_id) REFERENCES users(id) -- 设置外键约束
+);
+
+
+CREATE TABLE history (
+    history_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    user_id INTEGER NOT NULL,
+    symbol TEXT NOT NULL,
+    shares INTEGER NOT NULL,
+    price NUMERIC NOT NULL,
+    total NUMERIC NOT NULL,
+    transacted TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 买卖等交易时间记录
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+NVDA
+AAPL
+MSFT

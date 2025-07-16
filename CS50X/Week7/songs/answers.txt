@@ -1,0 +1,7 @@
+1.
+I will separately calculate the average values of energy, valence (pleasure), and danceability for the top 100 songs that the listener loved in 2018. These three average values will represent the listener's preference for specific characteristics of the songs.
+
+2.
+For the improvement plan, I will obtain all attributes of the top 100 songs in the playlist, excluding the ID and name, and calculate the average value for each attribute. By comparing the average values of each attribute with the specific attribute values of each song within these 100 tracks, we can determine the listeners' preferences for different musical features. The smaller the difference between an attribute's average value and its corresponding value in each song, the stronger the listener's preference for that type of musical feature.
+
+Subsequently, I will apply the same method to analyze the remaining attributes. Finally, I will rank the attributes based on the magnitude of deviation from smallest to largest to compute the "Audio Aura". This approach ensures that the attributes with the smallest deviations, indicating the highest listener preference, are prioritized at the top of the list.
