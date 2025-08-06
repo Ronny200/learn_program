@@ -17,3 +17,4 @@
 ok
 tests/
 /hw/hw01/construct_check.py
+*.aide.py
