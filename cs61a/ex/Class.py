@@ -55,3 +55,36 @@ class AsSeenOnTVAccount(CheckingAccount, SaveingsAccount):
     def __init__(self, account_holder):
         self.holder = account_holder
         self.balance = 1
+
+
+class Bank:
+    """一个银行类的实现
+    >>> bank = Bank()
+    >>> john = bank.open_account('John', 10)
+    >>> jack = bank.open_account('Jack', 5, CheckingAccount)
+    >>> john.interest
+    0.02
+    >>> jack.interest
+    0.01
+    >>> bank.pay_interest()
+    >>> john.balance
+    10.2
+    >>> bank.too_big_to_fail()
+    True
+    """
+
+    def __init__(self):
+        self.accounts = []
+
+    def open_account(self, holder, amount, kind=Account):
+        account = kind(holder)
+        account.deposit(amount)
+        self.accounts.append(account)
+        return account
+
+    def pay_interest(self):
+        for a in self.accounts:
+            a.deposit(a.balance * a.interest)
+
+    def too_big_to_fail(self):
+        return len(self.accounts) > 1
