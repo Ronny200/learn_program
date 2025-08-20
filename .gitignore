@@ -16,6 +16,7 @@
 *.ok*
 ok
 tests/
+editor/
 cs61a/proj/hog/default_graphics.py
 cs61a/proj/hog/dice.py
 cs61a/proj/hog/fuss.png
@@ -59,3 +60,4 @@ cs61a/proj/ants/ucb.py
 cs61a/lab/lab06/cardgame.py
 cs61a/lab/lab06/cards.py
 cs61a/lab/lab06/classes.py
+cs61a/hw/hw05/scheme
