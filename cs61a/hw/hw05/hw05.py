@@ -19,6 +19,19 @@ def store_digits(n):
     """
     "*** YOUR CODE HERE ***"
 
+    ans = []
+
+    def f(n):
+        if n < 1:
+            return
+        ans.append(Link(n % 10))
+        f(n // 10)
+
+    f(n)
+    for i in range(len(ans) - 1, 0, -1):
+        ans[i].rest = ans[i - 1]
+    return ans[-1]
+
 
 def deep_map_mut(func, s):
     """Mutates a deep link s by replacing each item found with the
@@ -40,10 +53,17 @@ def deep_map_mut(func, s):
     <9 <16> 25 36>
     """
     "*** YOUR CODE HERE ***"
+    if s is Link.empty:
+        return
+    if isinstance(s.first, Link):
+        deep_map_mut(func, s.first)
+    else:
+        s.first = func(s.first)
+    deep_map_mut(func, s.rest)
 
 
-def lgk_pow(n,k):
-    """Computes n^k.
+def lgk_pow(n, k):
+    """Computes n^k.快速幂算法
 
     >>> lgk_pow(2, 3)
     8
@@ -52,6 +72,13 @@ def lgk_pow(n,k):
     >>> a = lgk_pow(2, 100000000) # make sure you have log time
     """
     "*** YOUR CODE HERE ***"
+    ans = 1
+    while k > 0:
+        if k % 2 == 1:
+            ans = ans * n
+        n = n * n
+        k = k // 2
+    return ans
 
 
 class Link:
@@ -74,6 +101,7 @@ class Link:
     >>> print(s)                             # Prints str(s)
     <5 7 <8 9>>
     """
+
     empty = ()
 
     def __init__(self, first, rest=empty):
@@ -83,18 +111,19 @@ class Link:
 
     def __repr__(self):
         if self.rest is not Link.empty:
-            rest_repr = ', ' + repr(self.rest)
+            rest_repr = ", " + repr(self.rest)
         else:
-            rest_repr = ''
-        return 'Link(' + repr(self.first) + rest_repr + ')'
+            rest_repr = ""
+        return "Link(" + repr(self.first) + rest_repr + ")"
 
     def __str__(self):
-        string = '<'
+        string = "<"
         while self.rest is not Link.empty:
-            string += str(self.first) + ' '
+            string += str(self.first) + " "
             self = self.rest
-        return string + str(self.first) + '>'
+        return string + str(self.first) + ">"
+
 
 from reprlib import recursive_repr
-Link.__repr__ = recursive_repr()(Link.__repr__)
 
+Link.__repr__ = recursive_repr()(Link.__repr__)
