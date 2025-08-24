@@ -24,6 +24,8 @@ cs61a/proj/hog/hog_gui.py
 cs61a/proj/hog/hog_ui.py
 cs61a/proj/hog/ucb.py
 shared/
+images/
+abstract_turtle/
 construct_check.py
 cs61a/proj/cats/data/common_words.txt
 cs61a/proj/cats/data/final_diff_words.txt
