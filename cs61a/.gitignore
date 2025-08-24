@@ -20,7 +20,6 @@ tests/
 *.aide.py
 *.ok*
 ok
-scheme
 tests/
 cs61a/proj/hog/default_graphics.py
 cs61a/proj/hog/dice.py

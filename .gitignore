@@ -63,3 +63,13 @@ cs61a/lab/lab06/cardgame.py
 cs61a/lab/lab06/cards.py
 cs61a/lab/lab06/classes.py
 cs61a/hw/hw05/scheme
+cs61a/lab/lab08/scheme
+cs61a/proj/scheme/mytests.rst
+cs61a/proj/scheme/pair.py
+cs61a/proj/scheme/scheme_builtins.py
+cs61a/proj/scheme/scheme_reader
+cs61a/proj/scheme/scheme_tokens.py
+cs61a/proj/scheme/scheme_utils.py
+cs61a/proj/scheme/scheme.py
+cs61a/proj/scheme/tests.scm
+cs61a/proj/scheme/ucb.py
